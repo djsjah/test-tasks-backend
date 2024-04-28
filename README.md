@@ -91,7 +91,7 @@
 
    **-Первый вариант - оператор \*\*: использование оператора \*\* не считается как использование математических функций:** 
 
-   **Файл isSquare.option.first.js from ./js/thirdTask/isSquare.option.first** 
+   **-Файл isSquare.option.first.js from ./js/thirdTask/isSquare.option.first.js** 
 
 
    ```
@@ -139,7 +139,7 @@
 
    **-Второй вариант - реализация метода Ньютона для x^(2) - n = 0: использование оператора ** считается как использование математических функций (все-таки операторы, так скажем, "под копотом" - это такие же функции):** 
 
-   **-Файл isSquare.option.second.js from ./js/thirdTask/isSquare.option.second** 
+   **-Файл isSquare.option.second.js from ./js/thirdTask/isSquare.option.second.js** 
 
    ```
    const digit1 = 25;
@@ -187,7 +187,7 @@
 
    **-Третий вариант - бинарный поиск: прошлые два варианта не подходят:** 
 
-   **-Файл isSquare.option.third.js from ./js/thirdTask/isSquare.option.third** 
+   **-Файл isSquare.option.third.js from ./js/thirdTask/isSquare.option.third.js** 
 
    ```
    const digit1 = 9;
@@ -248,7 +248,7 @@
 
 4) **Функция, которая принимает два аргумента: массив из уникальных целых чисел и сумму в виде целого числа. Если сумма двух любых чисел массива из аргумента равна числу, которое приходит вторым аргументом, функция должна вернуть новый массив из этих двух чисел в любом порядке. Если решения нет, вернуть пустой массив. Текущее число само с собой складывать нельзя:** 
 
-   **-Файл findPairForSum.js from ./js/fourthTask/findPairForSum:** 
+   **-Файл findPairForSum.js from ./js/fourthTask/findPairForSum.js** 
 
    ```
    let firstArray = [2, 4, 1, 2, 3, 5, 3];
@@ -407,7 +407,7 @@
 
       **-Вот так может выглядеть взаимодействие с функцией func:** 
 
-      **-Файл eventLoop.js from ./js/fifthTask/eventLoop** 
+      **-Файл eventLoop.js from ./js/fifthTask/eventLoop.js** 
 
       ```
       const arr = [44, 0, 5, 73, 32, 1, 2, 66, 3];
@@ -457,7 +457,7 @@
 
    **a. async/await:** 
 
-   **-Файл eventLoop.asyncAwait.js from ./js/fifthTask/eventLoop.asyncAwait** 
+   **-Файл eventLoop.asyncAwait.js from ./js/fifthTask/eventLoop.asyncAwait.js** 
 
    ```
    const arrAsyncAwait = [44, 0, 5, 73, 32, 1, 2, 66, 3];
@@ -497,7 +497,7 @@
 
    **b. Promise:** 
 
-   **-Файл eventLoop.promise.js from ./js/fifthTask/eventLoop.promise** 
+   **-Файл eventLoop.promise.js from ./js/fifthTask/eventLoop.promise.js** 
 
    ```
    const arrPromise = [44, 0, 5, 73, 32, 1, 2, 66, 3];
