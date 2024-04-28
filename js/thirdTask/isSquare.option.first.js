@@ -1,6 +1,8 @@
 const digit1 = 25;
 const digit2 = 26;
 
+console.log('Задание 3 - Первый вариант: \n');
+
 try {
   isSquare(digit1);
   isSquare(digit2);
@@ -11,14 +13,14 @@ catch (err) {
 
 function isSquare(digit) {
   if (typeof digit !== 'number') {
-    throw new Error(`Value ${digit} is not a number`);
+    throw new Error(` Value ${digit} is not a number`);
   }
 
   if (isSquareConfirm(digit)) {
-    console.log(`Число ${digit} является квадратом`);
+    console.log(` Число ${digit} является квадратом`);
   }
   else {
-    console.log(`Число ${digit} не является квадратом`);
+    console.log(` Число ${digit} не является квадратом`);
   }
 }
 

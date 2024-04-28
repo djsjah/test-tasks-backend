@@ -1,9 +1,11 @@
-const digit1 = 25;
-const digit2 = 26;
+const digit3 = 25;
+const digit4 = 26;
+
+console.log('\n\nЗадание 3 - Второй вариант: \n');
 
 try {
-  isSquare(digit1);
-  isSquare(digit2);
+  isSquare(digit3);
+  isSquare(digit4);
 }
 catch (err) {
   console.log(err);
@@ -23,14 +25,14 @@ function sqrt(digit) {
 
 function isSquare(digit) {
   if (typeof digit !== 'number' || digit < 0 || digit % 1 !== 0) {
-    throw new Error(`Value ${digit} must be a positive integer`);
+    throw new Error(` Value ${digit} must be a positive integer`);
   }
 
   const root = sqrt(digit);
   if (root % 1 === 0 && root * root === digit) {
-    console.log(`Число ${digit} является квадратом`);
+    console.log(` Число ${digit} является квадратом`);
   }
   else {
-    console.log(`Число ${digit} не является квадратом`);
+    console.log(` Число ${digit} не является квадратом`);
   }
 }

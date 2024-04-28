@@ -1,9 +1,11 @@
-const digit1 = 9;
-const digit2 = 15;
+const digit5 = 9;
+const digit6 = 15;
+
+console.log('\n\nЗадание 3 - Третий вариант: \n');
 
 try {
-  isSquare(digit1);
-  isSquare(digit2);
+  isSquare(digit5);
+  isSquare(digit6);
 }
 catch (err) {
   console.log(err);
@@ -37,13 +39,13 @@ function squareRootBinarySearch(digit) {
 
 function isSquare(digit) {
   if (typeof digit !== 'number' || digit < 0 || digit % 1 !== 0) {
-    throw new Error(`Value ${digit} must be a positive integer`);
+    throw new Error(` Value ${digit} must be a positive integer`);
   }
 
   if (squareRootBinarySearch(digit)) {
-    console.log(`Число ${digit} является квадратом`);
+    console.log(` Число ${digit} является квадратом`);
   }
   else {
-    console.log(`Число ${digit} не является квадратом`);
+    console.log(` Число ${digit} не является квадратом`);
   }
 }
