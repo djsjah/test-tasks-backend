@@ -8,6 +8,14 @@ asyncFunc(arrAsyncAwait).then(([res, message = "Все прошло успешн
       Message: ${message}
     `
   );
+}).catch((message) => {
+  console.log(
+    `
+    Задание 5 (Promise):
+      Result array: null
+      Message: ${message}
+    `
+  );
 });
 
 async function asyncFunc(arr) {

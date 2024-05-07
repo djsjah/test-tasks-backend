@@ -20,7 +20,7 @@ function squareRootBinarySearch(digit) {
     let remainder = mid % 1;
 
     if (remainder > 0) {
-      mid = (start + end) / 2 - remainder;
+      mid = mid + remainder;
     }
 
     if (mid * mid === digit) {

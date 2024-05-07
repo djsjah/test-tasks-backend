@@ -1,18 +1,26 @@
 let firstArray = [2, 4, 1, 2, 3, 5, 3];
 let secondArray = [3, 5, -4, 8, 11, 1, -1, 6];
+let thirdArray = [5, 5];
 
 const firstArrayUpdated = findPairForSum(firstArray, 4);
 const secondArrayUpdated = findPairForSum(secondArray, 10);
+const thirdArrayUpdated = findPairForSum(thirdArray, 10);
 
 console.log(
   `
 
   Задание 4:
     Array: ${firstArray}
+    Sum: ${4}
     Result: ${firstArrayUpdated}
 
     Array: ${secondArray}
+    Sum: ${10}
     Result: ${secondArrayUpdated}
+
+    Array: ${thirdArray}
+    Sum: ${10}
+    Result: ${thirdArrayUpdated}
   `
 );
 
@@ -60,7 +68,7 @@ function findPairForSumValidator(arr, sum) {
     throw new Error(`Value ${sum} must be an integer`);
   }
 
-  // Проверка: массив arr содержит не только числа или содержит
+  // Проверка: массив arr содержит не только числа
   arr.forEach(value => {
     if (typeof value !== 'number' || value % 1 !== 0) {
       throw new Error(`Array must contain only integers`);

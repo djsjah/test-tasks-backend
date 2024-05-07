@@ -1,5 +1,7 @@
 **Результат работы всех программ - в логах консоли файла index.html. Также я добавил Github Pages для удобства.** 
 
+**Изменения: SQL-запрос 1.3, исправил схему в задании 2, два новых файла для пятого задания (./js/fifthTaskUpdated/eventLoopUpdated.asyncAwait.js и eventLoopUpdated.promise.js)** 
+
 1) **Даны следующие таблицы:** 
 
    ```
@@ -41,10 +43,10 @@
 
     1.3. Запрос (SELECT) для построения списка departments.*, для каждого указать только 1 название (даже если их несколько) с минимальным dep_names.id:
 
-        SELECT d.*, MIN(dn.name) AS name
-        FROM public.departments d
-        JOIN public.dep_names dn ON dep.id = dn.department_id
-        GROUP BY dep.id;
+        SELECT d.*, MIN(dn.id) AS min_name_id, dn.name AS name 
+        FROM public.departments d 
+        JOIN public.dep_names dn ON d.id = dn.department_id 
+        GROUP BY d.id, dn.name; 
 
 2) **Есть объекты вида:** 
 
@@ -60,13 +62,14 @@
 
    **Создадим структуру таблиц в реляционной БД для хранения этой информации на примере схемы prisma:**  
 
-   ```
+   ```  
    model Object {
     id            Int         @id @default(autoincrement())
-    time_stamp    DateTime
+    time_stamp    DateTime    @default(now())
     parent        Object?     @relation("ObjectToParent", fields: [parentId], references: [id])
     parentId      Int?
-    contacts      Contact[]
+    contact       Contact     @relation(fields: [contactId], references: [id]) 
+    contactId     Int? 
     addresses     Address[]
    }
 
@@ -74,18 +77,25 @@
     id            Int         @id @default(autoincrement())
     server        String
     email         String
-    users         String[]
-    objects       Object[]    @relation("ObjectToContact")
-   }
+    users         User[]
+    object        Object      @relation(fields: [objectId], references: [id]) 
+    objectId      Int 
+   } 
 
    model Address {
     id            Int         @id @default(autoincrement())
     address       String
-    objects       Object[]    @relation("ObjectToAddress")
-   }
+    object        Object      @relation(fields: [objectId], references: [id])
+    objectId      Int 
+   } 
+
+   model User   { 
+    id            Int         @id @default(autoincrement()) 
+    name          String 
+    contact       Contact?    @relation(fields: [contactId], references: [id]) 
+    contactId     Int? 
+   } 
    ``` 
-   
-   -Примечание: В Contact и Address я не указал fields (хранит внешний ключ) и references (целевое поле для внешнего ключа), так как в prisma эти поля явно нужно указывать только в самосвязи. В других же случаях - prisma автоматически обрабатывает создание и управление связями между моделями. Именно поэтому эти поля указываются в модели Object, но не указываются в моделях Contact и Address.
 
 3) **Проверка, что целое число является квадратом, не используя математические функции:** 
 
@@ -212,7 +222,7 @@
       let remainder = mid % 1;
 
       if (remainder > 0) {
-         mid = (start + end) / 2 - remainder;
+         mid = mid + remainder;
       }
 
       if (mid * mid === digit) {
@@ -315,7 +325,7 @@
       throw new Error(`Value ${sum} must be an integer`);
     }
 
-    // Проверка: массив arr содержит не только числа или содержит
+    // Проверка: массив arr содержит не только числа
     arr.forEach(value => {
       if (typeof value !== 'number' || value % 1 !== 0) {
         throw new Error(`Array must contain only integers`);
